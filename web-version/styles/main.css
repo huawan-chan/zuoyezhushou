@@ -1,0 +1,714 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8faf8;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* 页面容器 */
+#page-container {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 页面样式 */
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.header .subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.back-btn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 统计区域 */
+.stats-section {
+  margin: 20px 0;
+}
+
+.stats-section h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* 介绍区域 */
+.intro-section {
+  margin: 20px 0;
+}
+
+.intro-section h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.intro-card {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.intro-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.intro-card h3 {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.intro-card p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 搜索和筛选 */
+.search-section {
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+/* 状态分布图表 */
+.status-chart {
+  margin-top: 15px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status-bar {
+  flex: 1;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+/* 作业列表 */
+.homework-list {
+  margin-top: 20px;
+}
+
+.homework-list h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.homework-item {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.homework-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.homework-info {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.homework-subject {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.status-tag {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-processing {
+  background-color: #cce7ff;
+  color: #004085;
+}
+
+.status-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* 表单样式 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 科目管理 */
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.subject-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.subject-card {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.subject-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.subject-name {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.subject-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.subject-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 弹窗样式 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 300px;
+}
+
+.modal-content h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.color-picker {
+  margin-bottom: 15px;
+}
+
+.color-picker label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #f5f5f5;
+}
+
+.modal-buttons button:last-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* 统计图表 */
+.stats-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.bar-chart {
+  margin-top: 15px;
+}
+
+.bar-item {
+  margin-bottom: 10px;
+}
+
+.bar-container {
+  height: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.bar.pending {
+  background-color: #ffc107;
+}
+
+.bar.processing {
+  background-color: #17a2b8;
+}
+
+.bar.completed {
+  background-color: #28a745;
+}
+
+.pie-chart-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.trend-chart {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 功能列表 */
+.function-list {
+  margin-top: 20px;
+}
+
+.function-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.function-icon {
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+.function-content {
+  flex: 1;
+}
+
+.function-title {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.function-desc {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+.function-arrow {
+  color: #999;
+}
+
+/* 电子白板 */
+.canvas-container {
+  margin: 20px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#whiteboard {
+  display: block;
+  width: 100%;
+}
+
+.toolbar {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.tool-item {
+  margin-bottom: 15px;
+}
+
+.tool-item label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.tool-item input[type="range"] {
+  width: 100%;
+}
+
+.tool-item input[type="color"] {
+  width: 50px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.tool-section {
+  margin-bottom: 15px;
+}
+
+.brush-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.brush-option {
+  padding: 10px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.brush-option.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+/* 底部导航 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.nav-item.active {
+  color: #4caf50;
+}
+
+.nav-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.nav-item span:last-child {
+  font-size: 12px;
+}
+
+/* 作业详情 */
+.homework-detail-content {
+  padding: 20px;
+}
+
+.detail-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.detail-info {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-subject {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.detail-status {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.detail-desc {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-actions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.detail-actions button:first-child {
+  background-color: #f5f5f5;
+}
+
+.detail-actions button:last-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* 页脚 */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (min-width: 768px) {
+  #page-container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+}
